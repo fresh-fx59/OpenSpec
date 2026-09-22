@@ -1,5 +1,21 @@
 # @fission-ai/openspec
 
+## 1.13.2
+
+### Patch Changes
+
+- [#1940](https://github.com/Fission-AI/OpenSpec/pull/1940) [`0b5ce44`](https://github.com/Fission-AI/OpenSpec/commit/0b5ce44b55e0d793a312290ba5a41170a78e47c6) Thanks [@clay-good](https://github.com/clay-good)! - Keep fast-forward clarification guidance and onboarding task approval consistent across generated skills and commands. Fast-forward now asks only when context is critically unclear, while onboarding asks users to approve the task breakdown before saving it and separately asks whether to begin implementation.
+
+- [#1885](https://github.com/Fission-AI/OpenSpec/pull/1885) [`fd56e12`](https://github.com/Fission-AI/OpenSpec/commit/fd56e12c9e7fdbbfdc2dcd0a5ef3fab04840909d) Thanks [@philo-x](https://github.com/philo-x)! - Fix artifact output resolution to recognize brace expansion and extglob patterns while preserving literal output filenames and confining brace-expanded paths to the change directory.
+
+- [#1744](https://github.com/Fission-AI/OpenSpec/pull/1744) [`5b55263`](https://github.com/Fission-AI/OpenSpec/commit/5b5526377506c2f0179674a869c1ac64ca9ab72d) Thanks [@javigomez](https://github.com/javigomez)! - Clarify the Codex setup hint for CLI, IDE, and desktop app users.
+
+- [#1809](https://github.com/Fission-AI/OpenSpec/pull/1809) [`a5ceea3`](https://github.com/Fission-AI/OpenSpec/commit/a5ceea32cf110b6d8bbfea0bf1c65fe55abb133b) Thanks [@ryandemelo](https://github.com/ryandemelo)! - Say what a `MODIFIED` block adds when the scenario-loss guard fires ([#1809](https://github.com/Fission-AI/OpenSpec/pull/1809)). `openspec validate` and `openspec archive` already named the scenarios a block omits. They now also print how many scenarios each side has and which ones the block introduces, capped at three names, so a rename and a truncation read differently without opening either file. The guard catches exactly what it did before, and no exit code changes.
+
+- [#1939](https://github.com/Fission-AI/OpenSpec/pull/1939) [`a64303f`](https://github.com/Fission-AI/OpenSpec/commit/a64303fe1e24f08dbf44f78032fadbeac3a6f7fa) Thanks [@clay-good](https://github.com/clay-good)! - Return a nonzero exit status when `openspec update --force` cannot replace a legacy-only Codex installation.
+
+- [#1769](https://github.com/Fission-AI/OpenSpec/pull/1769) [`d3d7707`](https://github.com/Fission-AI/OpenSpec/commit/d3d770736fc01bb246b4f12a7cef7e3572ec1fb6) Thanks [@kikeprzn](https://github.com/kikeprzn)! - Fix `openspec archive` leaving `.openspec-archive.lock` behind on Windows. Node can report `dev: 0n` from a path stat while the open file handle reports the real volume id, so the claim-ownership check never matched and the stale lock blocked every later archive. The check now treats an absent device id as unavailable while still requiring the inode and the claim's contents to match before unlinking.
+
 ## 1.13.1
 
 ### Patch Changes
